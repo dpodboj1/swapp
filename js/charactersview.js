@@ -24,7 +24,7 @@ define([
 
             this.model.each(function(character){
                 const view = new CharacterView({ model: character });
-                self.$el.append(view.el);
+                self.$el.append(view.render().el);
             });
 
             return this;
