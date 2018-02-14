@@ -1,24 +1,36 @@
 define([
     'jquery',
     'underscore',
-    'backbone'
+    'backbone',
+    'mustache'
 ], function(
     $,
     _,
-    Backbone
+    Backbone,
+    Mustache
 ){
     return Backbone.View.extend({
-        tagName: "li",
+        tagName: 'li',
 
         initialize: function(options){
             if (!(options && options.model))
                 throw new Error("Please define a model!");
         },
 
-        render: function(){
-            this.$el.html(this.model.get("name"));
+        getTemplateData(data) {
+            data.toJSON();
+            return data;
+        },
 
-            return this;
+        renderTemplate(data, view) {
+            const template = $('#characterViewTemplate').html();
+            const html = Mustache.render(template, this.getTemplateData(data));
+            return view.$el.html(html);
+        },
+
+        render: function(){
+            const data = this.model;
+            this.renderTemplate(data, this);
         }
     });
 });
