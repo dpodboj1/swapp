@@ -16,7 +16,9 @@ define([
         },
 
         render: function(){
-            this.$el.html(this.model.get("name"));
+            const template = _.template($('#characterTemplate').html());
+            const html = template(this.model.toJSON());
+            this.$el.html(html);
 
             return this;
         }

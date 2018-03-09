@@ -10,5 +10,22 @@
 </head>
 <body>
     <script src="js/lib/require.js" data-main="js/main"></script>
+
+    <script id="characterTemplate" type="text/html">
+        <div class="character">
+            <div class="character__title">
+                <h1><%= name %></h1>
+            </div>
+            <div class="character__details">
+                <p>Height: <%= height %>cm</p>
+                <p>Mass: <%= mass %>kg</p>
+                <p>Eye color: <%= eye_color %></p>
+                <p>Gender: <%= gender %></p>
+            </div>
+            <div class="character__footer">
+                <p><%= created %></p>
+            </div>
+        </div>
+    </script>
 </body>
 </html>

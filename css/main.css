@@ -1,1 +1,34 @@
-/* no css rules yet */
+h1, h2, h3, h4, h5, h6, li, ul, p {
+    padding: 0;
+    margin: 0;
+}
+
+.mojalista {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+    padding-left: 20%;
+    padding-right: 20%;
+    margin: 0;
+    list-style: none;
+}
+
+.character {
+    display: grid;
+    grid-template-columns: 1fr;
+    border: 0.5px solid #ccc;
+    padding: 20px;
+}
+
+.character__title {
+    justify-self: center;
+}
+
+.character__details > p {
+    padding: 5px;
+}
+
+.character__footer {
+    justify-self: end;
+}
