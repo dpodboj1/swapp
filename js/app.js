@@ -25,7 +25,6 @@ define([
                 console.log('I encountered errors while fetching data.');
             }
         });
-
     };
 
     return {

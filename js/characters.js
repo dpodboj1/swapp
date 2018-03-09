@@ -9,7 +9,9 @@ define([
 ){
     return Backbone.Collection.extend({
         model: Character,
+
         url: 'https://swapi.co/api/people/?format=json',
+
         parse: function(data){
             return data.results;
         }
